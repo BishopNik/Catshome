@@ -67,7 +67,7 @@ body {
 	}
 
 	.main-list {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(2, 1fr);
 		gap: 24px;
 	}
 
@@ -172,7 +172,7 @@ body {
 }
 
 @media screen and (min-width: 1440px) {
-	.main-content {
+	/* .main-content {
 		display: grid;
 		grid-template-columns: 744px 1fr;
 		grid-template-rows: auto 1fr;
@@ -188,6 +188,27 @@ body {
 	.blog-item {
 		grid-template-columns: 264px 1fr;
 		column-gap: 24px;
+	} */
+
+	.main-content {
+		grid-template-areas:
+			'b b s'
+			'b b s'
+			'b b v'
+			'b b .';
+		gap: 60px 24px;
+	}
+
+	.blog-section {
+		grid-area: b;
+	}
+
+	.social-section {
+		grid-area: s;
+	}
+
+	.video-section {
+		grid-area: v;
 	}
 }
 
